@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_main">
+
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.example.myapplication.view.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_main_to_one"
+            app:destination="@id/fragment_one"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/slise_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_one"
+        android:name="com.example.myapplication.view.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/one_main">
+
+        <argument
+            android:name="number"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/fragment_two"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/slise_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_two"
+        android:name="com.example.myapplication.view.TwoFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/two_main">
+
+        <argument
+            android:name="number"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/fragment_three"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/slise_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_next_1"
+            app:destination="@id/fragment_main"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/slise_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_three"
+        android:name="com.example.myapplication.view.ThreeFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/three_main">
+
+        <argument
+            android:name="number"
+            android:defaultValue="3"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_next"
+            app:popUpTo="@id/fragment_main" />
+    </fragment>
+</navigation>

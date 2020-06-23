@@ -1,0 +1,72 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.3.72"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+subprojects {
+    configurations {
+        implementation
+        kapt
+        annotationProcessor
+    }
+    dependencies {
+        implementation 'com.google.dagger:dagger:2.27'
+        implementation 'com.google.dagger:dagger-android-support:2.27'
+        kapt 'com.google.dagger:dagger-compiler:2.27'
+        kapt 'com.google.dagger:dagger-android-processor:2.27'
+
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.google.com' }
+        maven { url "http://dl.bintray.com/hvdung-90/maven" }
+    }
+}
+ext {
+    versionCodeValue = 1
+    versionNameValue = '1.0.0'
+    // Sdk and tools
+    minSdkVersion = 21
+    targetSdkVersion = 26
+    compileSdkVersion = 29
+    buildToolsVersion = '26.0.2'
+
+    // App dependencies
+    supportLibraryVersion = '28.0.0'
+    buildToolsVersion = '26.0.2'
+    dagger_version = '2.26'
+    lifecycle_version = '1.1.1'
+    // Firebase and Facebook
+    googleVersion = '17.0.0'
+    firebaseVersion = '20.1.5'
+    firebaseCoreVersion = '17.3.0'
+    googlePlayVersion = '17.0.0'
+    lifecycle = '2.2.0'
+
+    //TODO DEV
+    BASE_URL_DEV = "\"https://reporting01.vsit.com.vn/\""
+    //TODO STG
+    BASE_URL_STG = "\"https://reporting01.vsit.com.vn/\""
+    //TODO PRO
+    BASE_URL_PRO = "\"https://reporting01.vsit.com.vn/\""
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
