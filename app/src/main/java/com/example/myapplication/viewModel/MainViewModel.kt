@@ -1,15 +1,17 @@
 package com.example.myapplication.viewModel
 
 import androidx.lifecycle.MutableLiveData
-import com.betall.lib.common.base.viewModel.BaseViewModel
+import com.core.lib.common.base.viewModel.BaseViewModel
 import com.example.myapplication.apiRepository.MainRepository
 import com.example.myapplication.model.ReportModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-
-class MainViewModel @Inject constructor(private var repository: MainRepository) : BaseViewModel() {
+@HiltViewModel
+open class MainViewModel @Inject constructor(private var repository: MainRepository) :
+    BaseViewModel() {
     val reports: MutableLiveData<List<ReportModel>> = MutableLiveData<List<ReportModel>>()
     val reportError = MutableLiveData<Boolean>()
 

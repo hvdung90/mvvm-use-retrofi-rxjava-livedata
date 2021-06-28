@@ -1,19 +1,17 @@
 package com.example.myapplication.view
 
 import android.annotation.SuppressLint
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import com.betall.lib.common.base.ui.BaseFragment
+import com.core.lib.common.base.ui.BaseFragment
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OneMainBinding
 import com.example.myapplication.viewModel.MainViewModel
-import com.jakewharton.rxbinding2.view.RxView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OneFragment : BaseFragment<MainViewModel, OneMainBinding>() {
-
-    override fun getViewModel(): Class<MainViewModel> {
-        return MainViewModel::class.java
-    }
-
+    override val mViewModel: MainViewModel by viewModels()
     override val layoutRes: Int
         get() = R.layout.one_main
 

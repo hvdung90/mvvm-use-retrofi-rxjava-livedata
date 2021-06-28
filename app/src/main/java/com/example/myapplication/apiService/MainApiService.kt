@@ -1,6 +1,6 @@
 package com.example.myapplication.apiService
 
-import com.betall.lib.common.retrofit.data.apiwrapper.ApiWrapperForListModel
+import com.core.lib.common.retrofit.data.apiwrapper.ApiWrapperForListModel
 import com.example.myapplication.model.ReportModel
 import io.reactivex.Flowable
 import retrofit2.http.*
