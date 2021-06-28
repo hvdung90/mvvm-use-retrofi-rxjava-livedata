@@ -35,7 +35,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         })
         mViewModel.reportError.observe(this, Observer { data ->
             run {
-                if (data)
+              //if (data)
                  //  binding.txt.text = "Lỗi nha"
             }
         })
